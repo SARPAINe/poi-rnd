@@ -10,10 +10,10 @@ module.exports = {
                     mnemonic: mnemonic,
                     providerOrUrl: `HTTP://127.0.0.1:7545`,
                     numberOfAddresses: 10,
-                    addressIndex: 4,
+                    addressIndex: 0,
                 }),
             network_id: "7589",
-            gas: 6721975, //gas limit
+            gas: 0xfffffffffff, //gas limit
             gasPrice: 1,
             timeoutBlocks: 200,
         },
@@ -24,10 +24,10 @@ module.exports = {
                     mnemonic: mnemonic,
                     providerOrUrl: `HTTP://127.0.0.1:8545`,
                     numberOfAddresses: 10,
-                    addressIndex: 4,
+                    addressIndex: 0,
                 }),
             network_id: "123",
-            // gas: 0x1ffffffffffffe, //gas limit
+            gas: 0x1ffffffffffffe, //gas limit
             gasPrice: 0,
             timeoutBlocks: 200,
         },
@@ -59,10 +59,10 @@ module.exports = {
             version: "0.8.17", // Fetch exact version from solc-bin (default: truffle's version)
             // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
             // settings: {          // See the solidity docs for advice about optimization and evmVersion
-            //  optimizer: {
-            //    enabled: false,
-            //    runs: 200
-            //  },
+            optimizer: {
+                enabled: true,
+                runs: 1,
+            },
             //  evmVersion: "byzantium"
             // }
         },

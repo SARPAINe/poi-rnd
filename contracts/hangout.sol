@@ -25,7 +25,7 @@ on the joint attention test.
     }
 
     mapping (address => ASF) public ASFbalances;
-    address[] participants;
+    address[] public participants;
 
     address[] verifiedUsers;
 
@@ -66,7 +66,7 @@ on the joint attention test.
    /* the closeSession function can be called by anyone in the hangut once the deadline has passed */
 
    function closeSession() public{
-      if(block.number<deadline) revert("error1");
+    //   if(block.number<deadline) revert("block number less than deadline");
       
       for(uint i = 0; i < participants.length; i++){
         if(ASFbalances[participants[i]].given > 4000 && ASFbalances[participants[i]].rewarded > 4000)
